@@ -1,8 +1,8 @@
-import Register from "@/pages/register/register";
-import React from "react";
+import Register from '@/pages/register/register'
+import React from 'react'
 
 const page = () => {
-  return <Register />;
-};
+  return <Register />
+}
 
-export default page;
+export default page
