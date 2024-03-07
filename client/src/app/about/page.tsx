@@ -1,8 +1,5 @@
-import React from "react";
-import About from "@/pages/about/about";
+import { AboutPage } from '@/pages/about/aboutPage'
 
-const about = () => {
-  return <About />;
-};
-
-export default about;
+export default function About() {
+  return <AboutPage />
+}

@@ -1,5 +1,5 @@
-import Landing from "@/pages/landing/Landing";
+import { LandingPage } from '@/pages/landing'
 
 export default function Home() {
-  return <Landing />;
+  return <LandingPage />
 }
