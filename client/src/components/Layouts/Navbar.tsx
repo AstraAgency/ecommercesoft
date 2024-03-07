@@ -43,7 +43,7 @@ const navbar = () => {
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="#" aria-current="page" color="secondary">
+            <Link href="#" aria-current="page" color="primary">
               Customers
             </Link>
           </NavbarItem>
