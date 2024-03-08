@@ -1,17 +1,13 @@
 'use client'
 
-import React from 'react'
-import './landing.scss'
 import {
   Input,
-  Dropdown,
-  DropdownTrigger,
-  Button,
-  DropdownMenu,
-  DropdownItem,
+  Chip
 } from '@nextui-org/react'
-import { Card, CardBody, CardFooter, Image } from '@nextui-org/react'
-import { IoIosSearch } from 'react-icons/io'
+import React from 'react'
+import RightControllers from './rightControllers'
+import Image from 'next/image'
+import "./landing.scss"
 
 const Landing = () => {
   const [selectedKeys, setSelectedKeys] = React.useState(new Set(['text']))
@@ -23,114 +19,133 @@ const Landing = () => {
 
   const list = [
     {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
       title: 'Orange',
-      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$5.50',
+      rating: '4.5 star rating',
     },
     {
-      title: 'Tangerine',
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$3.00',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
     },
     {
-      title: 'Raspberry',
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$10.00',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
     },
     {
-      title: 'Lemon',
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$5.30',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
     },
     {
-      title: 'Avocado',
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$15.70',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
     },
     {
-      title: 'Lemon 2',
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$8.00',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
     },
     {
-      title: 'Banana',
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$7.50',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
     },
     {
-      title: 'Watermelon',
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
-      price: '$12.20',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
     },
+    {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
+    },
+    {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
+    },
+    {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
+    },
+    {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
+    },
+    {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
+    },
+    {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
+    },
+    {
+      img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
+      price: '$10.50',
+      title: 'Orange',
+      rating: '4.5 star rating',
+    },
+
   ]
+
+
+
   return (
     <>
-      <div className='topsection bg-gradient-to-r from-purple-500 to-pink-500 w-screen	h-96'></div>
-      <div className='w-screen  p-[20px] flex justify-center items-center	'>
-        <div className='w-4/5 flex items-center justify-between max-w-[1024px]'>
-          <div className=''></div>
-          <Input
-            classNames={{
-              base: 'w-[350px]',
-              mainWrapper: 'h-full',
-              input: 'text-small',
-              inputWrapper:
-                'h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20',
-            }}
-            placeholder='Type to search...'
-            size='sm'
-            startContent={<IoIosSearch size={18} />}
-            type='search'
-          />
-          <Dropdown className=''>
-            <DropdownTrigger>
-              <Button variant='bordered' className='capitalize w-[100px]'>
-                {selectedValue}
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              aria-label='Single selection example'
-              variant='flat'
-              disallowEmptySelection
-              selectionMode='single'
-              selectedKeys={selectedKeys}
-              onSelectionChange={setSelectedKeys}
-            >
-              <DropdownItem key='text'>Text</DropdownItem>
-              <DropdownItem key='number'>Number</DropdownItem>
-              <DropdownItem key='date'>Date</DropdownItem>
-              <DropdownItem key='single_date'>Single Date</DropdownItem>
-              <DropdownItem key='iteration'>Iteration</DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
-        </div>
-      </div>
-      <div className='girdCard w-screen flex justify-center'>
-        <div className='gap-2 grid grid-cols-2 sm:grid-cols-4 max-w-7xl'>
-          {list.map((item, index) => (
-            <Card
-              shadow='sm'
-              key={index}
-              className=''
-              isPressable
-              onPress={() => console.log('item pressed')}
-            >
-              <CardBody className='overflow-visible p-0'>
+      {/* <div className='topsection bg-gradient-to-r from-purple-500 to-pink-500 w-screen	h-96'></div> */}
+      <div className=' flex justify-center '>
+        <RightControllers />
+        <div className='w-full  pl-5 pr-5 pt-2'>
+          <Input type="email" label="Search a product" className='mb-5' />
+          <div className="flex flex-wrap gap-3 sm:gap-1">
+            <Chip size="md" className='bg-[#f4f4f5] cursor-pointer'>$0 - $25</Chip>
+            <Chip size="md" className='bg-[#f4f4f5] cursor-pointer'>$25 - $50</Chip>
+            <Chip size="md" className='bg-[#f4f4f5] cursor-pointer'>$50 - $100</Chip>
+            <Chip size="md" className='bg-[#f4f4f5] cursor-pointer'>More than $100</Chip>
+            <Chip size="md" className='bg-[#f4f4f5] cursor-pointer'>Rating: 4+</Chip>
+          </div>
+          <div className="grid justify-center 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-3  sm:grid-cols-2 gap-4  mt-4">
+
+            {list.map((ele, ind) =>
+              <div key={ind} className='w-[168px]'>
                 <Image
-                  shadow='sm'
-                  radius='lg'
-                  width='100%'
-                  alt={item.title}
-                  className='w-full object-cover h-[140px]'
-                  src={item.img}
+                  className='rounded-2xl'
+                  src={ele.img}
+                  alt=""
+                  width={168}
+                  height={150}
                 />
-              </CardBody>
-              <CardFooter className='text-small justify-between'>
-                <b>{item.title}</b>
-                <p className='text-default-500'>{item.price}</p>
-              </CardFooter>
-            </Card>
-          ))}
+                <div className='flex flex-col gap-1 mt-2'>
+                  <span className='font-bold h-5'>{ele.price}</span>
+                  <span className='text-[#8A7061] h-5'>{ele.title}</span>
+                  <span className='text-[#8A7061] h-5'>{ele.rating}</span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
