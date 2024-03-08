@@ -7,6 +7,7 @@ import { Avatar, Dropdown, DropdownMenu, DropdownItem, DropdownTrigger } from '@
 export const NavbarUserOptions = () => {
   const router = useRouter()
   const user = useSelector((state: any) => state.user)
+  const menuItems = ['Profile', 'Dashboard', 'My Settings']
 
   const logOut = () => {
     const token = localStorage.getItem('token')
@@ -15,8 +16,6 @@ export const NavbarUserOptions = () => {
       window.location.reload()
     }
   }
-
-  const menuItems = ['Profile', 'Dashboard', 'My Settings']
 
   if (user !== null) {
     return (
