@@ -28,5 +28,5 @@ model Users {
   lastName    String    @db.VarChar(30)
   password    String    @db.VarChar()
   createdAt   DateTime? @default(now())
-  description String    @db.VarChar(30)
+  description String    @default("") @db.VarChar(30)
 }

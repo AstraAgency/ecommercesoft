@@ -1,6 +1,6 @@
 import { Users } from '@prisma/client'
 import { AuthService } from 'src/services/auth.service'
-import { Controller, Post, Body, Get } from '@nestjs/common'
+import { Controller, Post, Body, Get, Param } from '@nestjs/common'
 
 interface tokenData {
   token: string
@@ -20,9 +20,9 @@ export class AuthController {
     return this.appService.userLogin(data)
   }
 
-  @Get('/load/profile')
-  loadProfile(@Body() data: tokenData) {
-    return this.appService.loadUserByToken(data.token)
+  @Get('/load/profile/:token')
+  loadProfile(@Param('token') token: string) {
+    return this.appService.loadUserByToken(token)
   }
 
   @Get('/load/profiles')
