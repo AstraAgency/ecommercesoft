@@ -14,16 +14,19 @@ datasource db {
 }
 
 model Products {
-  id        Int       @id @default(autoincrement())
-  name      String    @db.VarChar(30)
-  price     Int
-  createdAt DateTime? @default(now())
-  description String @db.VarChar(30)
+  id          Int       @id @default(autoincrement())
+  name        String    @db.VarChar(30)
+  price       Int
+  createdAt   DateTime? @default(now())
+  description String    @db.VarChar(30)
 }
 
 model Users {
   id          Int       @id @default(autoincrement())
   name        String    @db.VarChar(30)
+  email       String    @unique @db.VarChar(30)
+  lastName    String    @db.VarChar(30)
+  password    String    @db.VarChar()
   createdAt   DateTime? @default(now())
-  description String    @db.VarChar(30)
+  description String    @default("") @db.VarChar(30)
 }
