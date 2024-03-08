@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import Navbar from '@/components/Layouts/Navbar'
 import { authRegister } from '@/api/Request'
 import { Input, Button } from '@nextui-org/react'
@@ -87,6 +88,11 @@ const Register = () => {
               <Button className='bg-violet-500 text-white' onClick={() => handleRegister()}>
                 Registrar cuenta
               </Button>
+              <Link href={'/login'}>
+                <p className='text-xs font-normal'>
+                  ¿Ya tienes una cuenta? Haz clic aquí para iniciar sesión
+                </p>
+              </Link>
             </form>
           </div>
         </div>
