@@ -7,7 +7,7 @@ import { NavbarUserOptions } from './NavbarUserOptions'
 import { authLoadProfileByToken } from '@/api/Request'
 import { Link, Input, Navbar, NavbarItem, NavbarBrand, NavbarContent } from '@nextui-org/react'
 
-const navbar = () => {
+const EcommerceNavbar = () => {
   let token: unknown = null
 
   const dispatch = useDispatch()
@@ -84,4 +84,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default EcommerceNavbar
