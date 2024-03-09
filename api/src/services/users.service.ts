@@ -26,7 +26,7 @@ export class UsersService {
     }
 
     try {
-      this.prisma.users.update({
+      await this.prisma.users.update({
         where: {
           id,
         },
@@ -39,14 +39,14 @@ export class UsersService {
   }
 
   async deleteUser(id: number) {
+    const user = await this.getUserById(id)
+
+    if (!user) {
+      throw new HttpException('Usuario no encontrado', HttpStatus.NOT_FOUND)
+    }
+
     try {
-      const user = await this.getUserById(id)
-
-      if (!user) {
-        throw new HttpException('Usuario no encontrado', HttpStatus.NOT_FOUND)
-      }
-
-      this.prisma.users.delete({
+      await this.prisma.users.delete({
         where: {
           id,
         },

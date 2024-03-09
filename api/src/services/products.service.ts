@@ -32,7 +32,7 @@ export class ProductsService {
     }
 
     try {
-      this.prisma.products.update({
+      await this.prisma.products.update({
         where: {
           id,
         },
@@ -45,19 +45,18 @@ export class ProductsService {
   }
 
   async deleteProduct(id: number) {
+    const product = await this.getProductById(id)
+
+    if (!product) {
+      throw new HttpException('Producto no encontrado', HttpStatus.NOT_FOUND)
+    }
+
     try {
-      const product = await this.getProductById(id)
-
-      if (!product) {
-        throw new HttpException('Producto no encontrado', HttpStatus.NOT_FOUND)
-      }
-
-      this.prisma.products.delete({
+      await this.prisma.products.delete({
         where: {
           id,
         },
       })
-
       return 'Producto eliminado correctamente'
     } catch (error) {
       throw new BadRequestException('Error al borrar el producto')
