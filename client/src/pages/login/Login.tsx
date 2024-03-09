@@ -12,7 +12,6 @@ const Login = () => {
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(data)
     setData({
       ...data,
       [e.target.name]: e.target.value,
