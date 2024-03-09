@@ -2,10 +2,13 @@
 import React from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/Layouts/Navbar'
+import { useRouter } from 'next/navigation'
 import { authRegister } from '@/api/Request'
 import { Input, Button } from '@nextui-org/react'
 
 const Register = () => {
+  const router = useRouter()
+
   const [data, setData] = React.useState({
     email: '',
     password: '',
@@ -48,7 +51,8 @@ const Register = () => {
 
   const handleRegister = async () => {
     try {
-      authRegister(data)
+      await authRegister(data)
+      router.push('/login')
     } catch (error) {
       console.log(error)
     }
