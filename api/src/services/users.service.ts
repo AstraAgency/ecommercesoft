@@ -19,14 +19,14 @@ export class UsersService {
   }
 
   async updateUser(id: number, data: Users) {
-    const product = await this.getUserById(id)
+    const user = await this.getUserById(id)
 
-    if (!product) {
+    if (!user) {
       throw new HttpException('Usuario no encontrado', HttpStatus.NOT_FOUND)
     }
 
     try {
-      this.prisma.products.update({
+      this.prisma.users.update({
         where: {
           id,
         },
@@ -46,7 +46,7 @@ export class UsersService {
         throw new HttpException('Usuario no encontrado', HttpStatus.NOT_FOUND)
       }
 
-      this.prisma.products.delete({
+      this.prisma.users.delete({
         where: {
           id,
         },
