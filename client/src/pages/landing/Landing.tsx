@@ -10,11 +10,6 @@ import './landing.scss'
 const Landing = () => {
   const [selectedKeys, setSelectedKeys] = React.useState(new Set(['text']))
 
-  const selectedValue = React.useMemo(
-    () => Array.from(selectedKeys).join(', ').replaceAll('_', ' '),
-    [selectedKeys]
-  )
-
   const list = [
     {
       img: 'https://images-ext-1.discordapp.net/external/h9KBj4hZC8w-YcRJnCl0g2mIBpDPq6DKHSc_w2otdh4/https/nextui-docs-v2.vercel.app/images/fruit-1.jpeg?format=webp&width=561&height=701',
@@ -119,7 +114,7 @@ const Landing = () => {
       {/* <div className='topsection bg-gradient-to-r from-purple-500 to-pink-500 w-screen	h-96'></div> */}
       <div className=' flex justify-center '>
         <RightControllers menu={menu} handleMenu={handleMenu} />
-        <div className={`w-full  pl-5 pr-5 pt-2  ${menu ? 'ml-[300px]' : 'ml-[50px]'}`}>
+        <div className={`w-full  pl-5 pr-5 pt-2  ${menu ? 'ml-[300px]' : 'ml-[50px]'} `}>
           <Input type='email' label='Search a product' className='mb-5' />
           <div className='flex flex-wrap gap-3 sm:gap-1 '>
             <Chip size='md' className='bg-[#f4f4f5] cursor-pointer'>
@@ -138,9 +133,9 @@ const Landing = () => {
               Rating: 4+
             </Chip>
           </div>
-          <div className='grid justify-center 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-3  sm:grid-cols-2 gap-4  mt-4 '>
+          <div className='grid justify-center items-center 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-2 gap-4 mt-4 flex'>
             {list.map((ele, ind) => (
-              <div key={ind} className='w-[168px]'>
+              <div key={ind} className='w-[100%] flex justify-center	items-center	 flex-col'>
                 <Image className='rounded-2xl' src={ele.img} alt='' width={168} height={150} />
                 <div className='flex flex-col gap-1 mt-2'>
                   <span className='font-bold h-5'>{ele.price}</span>

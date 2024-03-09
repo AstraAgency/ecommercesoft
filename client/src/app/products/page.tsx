@@ -1,9 +1,7 @@
 import Products from '@/pages/products/products'
 
 const page = () => {
-    return (
-        <Products />
-    )
+  return <Products />
 }
 
 export default page

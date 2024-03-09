@@ -5,18 +5,17 @@ import { PiTelevisionFill } from 'react-icons/pi'
 import { IoIosArrowForward, IoIosMenu } from 'react-icons/io'
 
 interface RightControllersProps {
-    menu: boolean;
-    handleMenu: () => void;
-  }
+  menu: boolean
+  handleMenu: () => void
+}
 
 export default function RightControllers(props: RightControllersProps) {
-
   return (
     <Listbox
       aria-label='User Menu'
       className={`p-0 gap-0 divide-y divide-default-300/50 dark:divide-default-100/80 bg-content1 ${
         props.menu ? 'max-w-[300px]' : 'max-w-[50px]'
-      } overflow-visible shadow-small fixed left-0	h-full z-20`}
+      } overflow-visible shadow-small fixed left-0 mt-[65px]	h-full z-20`}
       itemClasses={{
         base: 'px-3 first:rounded-t-medium last:rounded-b-medium rounded-none gap-3 h-12 data-[hover=true]:bg-default-100/80 ',
       }}
