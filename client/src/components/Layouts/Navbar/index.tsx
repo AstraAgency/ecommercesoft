@@ -49,7 +49,8 @@ const EcommerceNavbar = () => {
   ]
 
   return (
-    <Navbar isBordered className='absolute fixed'>
+    <Navbar isBordered className='absolute fixed 	'>
+
       <NavbarContent justify='start'>
         <NavbarBrand className='mr-4'>
           <p className='hidden sm:block font-bold text-inherit'>ACME</p>
